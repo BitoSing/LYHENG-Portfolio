@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#3a5169" />
+    <meta name="theme-color" content="#2c3e50" />
     <meta name="description" content="LY HENG's Portfolio - Web Developer & Designer" />
     <meta name="keywords" content="portfolio, web developer, designer, LY HENG" />
     <title>LY HENG | Portfolio</title>
@@ -29,6 +29,18 @@
       /*  import google fonts */
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
 
+      :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #e74c3c;
+        --background: #ffffff;
+        --text-primary: #2c3e50;
+        --text-secondary: #4a5568;
+        --white: #ffffff;
+        --light-gray: #e2e8f0;
+        --border-color: #e2e8f0;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -46,15 +58,15 @@
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #f5f7fa;
+        background: var(--light-gray);
       }
       ::-webkit-scrollbar-thumb {
-        background: #3a5169;
+        background: var(--primary);
         border-radius: 4px;
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background: #2c3e50;
+        background: var(--secondary);
       }
 
       /* all similar content styling codes */
@@ -83,8 +95,13 @@
         align-items: center;
         justify-content: space-between;
       }
-      .about {
-        background-color: #f9f9ff;
+      body {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .about, .skills, .experience, .contact {
+        background-color: var(--background);
       }
       section .title {
         position: relative;
@@ -110,7 +127,7 @@
         bottom: -12px;
         left: 50%;
         font-size: 16px;
-        color: #3a5169;
+        color: var(--primary);
         padding: 0 15px;
         background: #ffffff;
         transform: translateX(-50%);
@@ -140,8 +157,8 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: white;
-        color: #457abd;
+        background: var(--white);
+        color: var(--secondary);
         font-size: 22px;
         text-decoration: none;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -157,7 +174,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, #457abd 0%, #2c5282 100%);
+        background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: 1;
@@ -226,7 +243,7 @@
         justify-content: space-between;
       }
       .navbar .logo a {
-        color: #fff;
+        color: var(--white);
         font-size: 35px;
         font-weight: 600;
       }
@@ -235,7 +252,7 @@
         transition: all 0.3s ease;
       }
       .navbar.sticky .logo a span {
-        color: #fff;
+        color: var(--white);
       }
       .navbar .menu li {
         list-style: none;
@@ -243,7 +260,7 @@
       }
       .navbar .menu li a {
         display: block;
-        color: #fff;
+        color: var(--white);
         font-size: 18px;
         font-weight: 500;
         margin-left: 25px;
@@ -253,12 +270,12 @@
         color: #4a90e2;
       }
       .navbar.sticky .menu li a:hover {
-        color: #fff;
+        color: var(--white);
       }
 
       /* menu btn styling */
       .menu-btn {
-        color: #fff;
+        color: var(--white);
         font-size: 23px;
         cursor: pointer;
         display: none;
@@ -272,7 +289,7 @@
         bottom: 30px;
         text-align: center;
         line-height: 45px;
-        color: #fff;
+        color: var(--white);
         z-index: 9999;
         font-size: 20px;
         border-radius: 50%;
@@ -295,9 +312,9 @@
       /* home section styling */
       .home {
         display: flex;
-        background: url("Img/Banner3.jpg") no-repeat center/cover;
+        background: url("Img/Banner3.JPG") no-repeat center/cover;
         height: 100vh;
-        color: #fff;
+        color: var(--white);
         min-height: 500px;
         background-attachment: fixed;
         font-family: "Ubuntu", sans-serif;
@@ -337,10 +354,12 @@
         font-size: 75px;
         font-weight: 600;
         margin-left: -3px;
+        line-height: 1.2;
       }
       .home .home-content .text-3 {
         font-size: 40px;
-        margin: 5px 0;
+        margin: 15px 0 25px;
+        line-height: 1.3;
       }
       .home .home-content .text-3 span {
         color: #4a90e2;
@@ -368,7 +387,7 @@
       .home .home-content a {
         display: inline-block;
         background: #3a5169;
-        color: #fff;
+        color: var(--white);
         font-size: 16px;
         padding: 12px 30px;
         margin-top: 30px;
@@ -398,7 +417,7 @@
         left: 100%;
       }
       .home .home-content a:hover {
-        color: #fff;
+        color: var(--white);
         background: #4a90e2;
         border-color: #4a90e2;
         transform: translateY(-3px);
@@ -429,7 +448,7 @@
 
       .profile-img {
         width: 100%;
-        height: 400px;
+        height: auto;
         max-height: 70vh;
         object-fit: cover;
         display: none;
@@ -523,7 +542,7 @@
         margin-bottom: 10px;
       }
       .about .about-content .right .text span {
-        color: #457abd;
+        color: var(--secondary);
       }
       .about .about-content .right p {
         text-align: justify;
@@ -531,7 +550,7 @@
       .about .about-content .right a {
         display: inline-block;
         background: #3a5169;
-        color: #fff;
+        color: var(--white);
         font-size: 14px;
         font-weight: 500;
         padding: 10px 25px;
@@ -561,7 +580,7 @@
         left: 100%;
       }
       .about .about-content .right a:hover {
-        color: #fff;
+        color: var(--white);
         background: #4a90e2;
         border-color: #4a90e2;
         transform: translateY(-2px);
@@ -606,7 +625,7 @@
             transition: color 0.3s ease;
         }
         .services .serv-content .card:hover i{
-            color: #fff;
+            color: var(--white);
         }
         .services .serv-content .card .text{
             font-size: 25px;
@@ -616,7 +635,7 @@
 
       /* Modern Skills Section Styling */
       .skills {
-        background: #f9f9ff;
+        background: var(--background);
         padding: 100px 0;
       }
       
@@ -637,15 +656,21 @@
       .skills-container {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
       }
       
       .skill-category {
-        background: white;
+        background: var(--white);
         border-radius: 15px;
-        padding: 30px;
+        padding: 35px 30px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 40px;
+        overflow: hidden;
+      }
+      
+      .skill-category:last-child {
+        margin-bottom: 0;
       }
       
       .skill-category:hover {
@@ -654,7 +679,7 @@
       }
       
       .skill-category h3 {
-        color: #3a5169;
+        color: var(--primary);
         font-size: 22px;
         margin-bottom: 25px;
         display: flex;
@@ -671,17 +696,23 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 25px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
       }
       
       .skill-card {
         display: flex;
         align-items: flex-start;
-        gap: 15px;
-        padding: 20px;
+        gap: 18px;
+        padding: 25px;
         background: #fff;
         border-radius: 12px;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         border: 1px solid #eee;
+        height: 100%;
+        box-sizing: border-box;
+        margin: 0;
       }
       
       .skill-card:hover {
@@ -690,25 +721,47 @@
       }
       
       .skill-icon {
-        width: 50px;
-        height: 50px;
+        width: 54px;
+        height: 54px;
         background: rgba(74, 144, 226, 0.1);
-        border-radius: 12px;
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #4a90e2;
-        font-size: 22px;
+        font-size: 24px;
         flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+      
+      .skill-card:hover .skill-icon {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
       
       .skill-info {
         flex: 1;
+        min-width: 0; /* Prevents flex items from overflowing */
       }
       
       .skill-info h4 {
         margin: 0 0 8px 0;
-        color: #3a5169;
+        color: var(--primary);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      
+      .skill-info p {
+        margin: 0 0 12px 0;
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      
+      .skill-info h4 {
+        margin: 0 0 8px 0;
+        color: var(--primary);
         font-size: 16px;
         font-weight: 600;
       }
@@ -716,17 +769,27 @@
       .skill-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
-        margin-top: 10px;
+        gap: 8px;
+        margin: 15px 0 0 0;
+        padding: 0;
+        list-style: none;
       }
       
       .skill-tags span {
         background: rgba(74, 144, 226, 0.1);
         color: #4a90e2;
-        font-size: 10px;
-        padding: 3px 8px;
+        font-size: 11px;
+        padding: 4px 10px;
         border-radius: 12px;
         font-weight: 500;
+        line-height: 1.4;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+      }
+      
+      .skill-tags span:hover {
+        background: rgba(74, 144, 226, 0.2);
+        transform: translateY(-1px);
       }
       
       .skill-progress {
@@ -919,7 +982,6 @@
       }
       
       .contact {
-        background: #f9f9ff;
         padding: 100px 0;
         position: relative;
         overflow: hidden;
@@ -1001,7 +1063,7 @@
       
       .contact .row i {
         font-size: 22px;
-        color: #457abd;
+        color: var(--secondary);
         width: 40px;
         height: 40px;
         background: rgba(69, 122, 189, 0.1);
@@ -1016,21 +1078,23 @@
       
       .contact .row:hover i {
         background: #457abd;
-        color: #fff;
+        color: var(--white);
         transform: rotate(5deg) scale(1.1);
       }
       
       /* Experience Section */
       .experience {
-        background: #f9f9ff;
+        background: var(--background);
         padding: 100px 0;
+        font-family: "Poppins", sans-serif;
       }
 
       .timeline {
         position: relative;
-        max-width: 1000px;
+        max-width: 2000px;
         margin: 0 auto;
-        padding: 40px 0;
+        padding: 40px 30px;
+        width: 98%;
       }
 
       .timeline::before {
@@ -1045,7 +1109,7 @@
       }
 
       .timeline-item {
-        padding: 10px 40px;
+        padding: 10px 15px;
         position: relative;
         width: 50%;
         box-sizing: border-box;
@@ -1077,11 +1141,14 @@
       }
 
       .timeline-content {
-        padding: 20px 30px;
+        padding: 40px 50px;
         background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        margin: 0 5px;
+        width: calc(100% - 10px);
+        max-width: 100%;
       }
 
       .timeline-content:hover {
@@ -1090,26 +1157,23 @@
       }
 
       .timeline-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
 
       .timeline-header h3 {
         margin: 0;
-        color: #3a5169;
+        color: #333;
         font-size: 18px;
         font-weight: 600;
       }
 
-      .timeline-header .date {
+      .date {
         color: #666;
         font-size: 14px;
         font-weight: 500;
-        background: #f0f4f8;
-        padding: 4px 10px;
-        border-radius: 20px;
+        margin: 5px 0 15px 0;
+        padding: 4px 0;
+        font-style: italic;
       }
 
       .timeline-content h4 {
@@ -1120,35 +1184,64 @@
       }
 
       .timeline-content ul {
-        padding-left: 20px;
-        margin: 0;
+        padding-left: 0;
+        margin: 20px 0 0 0;
+        list-style: none;
       }
 
       .timeline-content ul li {
-        margin-bottom: 8px;
-        line-height: 1.5;
-        color: #555;
-        font-size: 14px;
+        margin-bottom: 15px;
+        line-height: 1.6;
+        color: #4a5568;
+        font-size: 15px;
         position: relative;
+        padding-left: 28px;
+        transition: all 0.3s ease;
       }
 
       .timeline-content ul li:before {
-        content: '•';
-        color: #3a5169;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 8px;
+        height: 8px;
+        background: #457abd;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
       }
 
-      @media (max-width: 768px) {
-        .timeline::before {
-          left: 30px;
-        }
+      .timeline-content ul li:hover {
+        color: #2d3748;
+        transform: translateX(5px);
+      }
 
+      .timeline-content ul li:hover:before {
+        background: #3a5169;
+        width: 10px;
+        height: 10px;
+      }
+
+      @media (max-width: 1500px) {
+        .timeline {
+          max-width: 95%;
+        }
+        
+        .timeline-content {
+          padding: 35px 40px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .timeline {
+          max-width: 100%;
+          padding: 30px 15px;
+        }
+        
         .timeline-item {
-          width: 100%;
-          padding-left: 70px;
+          width: 100% !important;
+          padding-left: 60px;
           padding-right: 0;
         }
 
@@ -1157,7 +1250,7 @@
         }
 
         .timeline-dot {
-          left: 20px !important;
+          left: 15px !important;
           right: auto !important;
         }
 
@@ -1211,6 +1304,10 @@
         padding-bottom: 10px;
       }
       
+      h1, h2, h3, h4, h5, h6 {
+        color: var(--text-primary);
+      }
+
       .contact .right .text::after {
         content: '';
         position: absolute;
@@ -1276,7 +1373,7 @@
       
       .button-area button {
         background: #457abd;
-        color: #fff;
+        color: var(--white);
         border: none;
         padding: 12px 30px;
         border-radius: 8px;
@@ -1309,7 +1406,7 @@
         height: 40px;
         border-radius: 50%;
         background: #f0f4f8;
-        color: #457abd;
+        color: var(--secondary);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1319,7 +1416,7 @@
       
       .social-contact a:hover {
         background: #457abd;
-        color: #fff;
+        color: var(--white);
         transform: translateY(-3px);
       }
       
@@ -1342,9 +1439,42 @@
       }
       
       @media (max-width: 768px) {
+        .home .home-content .text-2 {
+          font-size: 50px;
+        }
+        .home .home-content .text-3 {
+          font-size: 30px;
+        }
+        
+        .about .about-content .left,
+        .about .about-content .right {
+          width: 100%;
+        }
+        
+        .about .about-content .right {
+          margin-top: 30px;
+        }
+        
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .skill-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .skill-icon {
+          margin-bottom: 15px;
+        }
+        
         .contact .fields {
           flex-direction: column;
           gap: 15px;
+        }
+        
+        .contact .field.half {
+          width: 100%;
         }
         
         .contact .field {
@@ -1388,13 +1518,13 @@
 
       /* footer section styling */
       footer {
-        background: #457abd;
+        background: var(--primary);
         padding: 15px 23px;
-        color: #fff;
+        color: var(--white);
         text-align: center;
       }
       footer span a {
-        color: #fff;
+        color: var(--white);
         text-decoration: none;
       }
       footer span a:hover {
@@ -1520,7 +1650,45 @@
       @media (max-width: 947px) {
         .menu-btn {
           display: block;
+          z-index: 9999;
+          position: relative;
+        }
+        
+        .navbar .menu {
+          position: fixed;
+          height: 100vh;
+          width: 100%;
+          left: -100%;
+          top: 0;
+          background: rgba(44, 62, 80, 0.98);
+          text-align: center;
+          padding-top: 100px;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           z-index: 999;
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .navbar .menu.active {
+          left: 0;
+        }
+        
+        .navbar .menu li {
+          display: block;
+          margin: 25px 0;
+        }
+        
+        .navbar .menu li a {
+          font-size: 23px;
+          display: inline-block;
+          padding: 10px 25px;
+          border-radius: 30px;
+          transition: all 0.3s ease;
+        }
+        
+        .navbar .menu li a:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-3px);
         }
         .menu-btn i.active:before {
           content: "\f00d";
@@ -1747,9 +1915,60 @@
         <div class="skills-intro">
           <p>A versatile professional with expertise in creative design, business intelligence, and strategic leadership. I combine technical skills with strong analytical and interpersonal abilities to deliver impactful results.</p>
         </div>
-        
+
         <div class="skills-container">
-          <!-- Creative & Design Tools -->
+          <!-- Language Proficiency -->
+          <div class="skill-category">
+            <h3><i class="fas fa-language"></i> Language Proficiency</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <span style="font-weight: bold; font-size: 18px;">Kh</span>
+                </div>
+                <div class="skill-info">
+                  <h4>Khmer</h4>
+                  <p>Native Language</p>
+                  <div class="skill-progress">
+                    <div class="progress-bar" style="--progress: 100%">
+                      <span>100%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <span style="font-weight: bold; font-size: 18px;">En</span>
+                </div>
+                <div class="skill-info">
+                  <h4>English</h4>
+                  <p>Fluent</p>
+                  <div class="skill-progress">
+                    <div class="progress-bar" style="--progress: 85%">
+                      <span>85%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <span style="font-weight: bold; font-size: 18px;">Ch</span>
+                </div>
+                <div class="skill-info">
+                  <h4>Chinese</h4>
+                  <p>Intermediate (Formal)</p>
+                  <div class="skill-progress">
+                    <div class="progress-bar" style="--progress: 60%">
+                      <span>60%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Creative & Design Tools (Original) -->
           <div class="skill-category">
             <h3><i class="fas fa-paint-brush"></i> Creative & Design Tools</h3>
             <div class="skills-grid">
@@ -1944,9 +2163,9 @@
               <div class="timeline-content">
                 <div class="timeline-header">
                   <h3>Acting Manager, Customer Relationships</h3>
-                  <span class="date">Jul 2025 – Oct 2025 (4 Months)</span>
                 </div>
                 <h4>EZECOM Co., LTD & CAMGSM Co., LTD</h4>
+                <div class="date">Jul 2025 – Oct 2025 (4 Months)</div>
                 <ul>
                   <li>Managed the Complete Customer Lifecycle for the EZECOM (FTTH Consumer) and Cellcard bases, focusing on proactive collections, renewals, and retention strategies.</li>
                   <li>Achieved and maintained a 95% Revenue Renewal Rate, consistently hitting aggressive business targets through targeted initiatives and performance tracking.</li>
@@ -1964,9 +2183,9 @@
               <div class="timeline-content">
                 <div class="timeline-header">
                   <h3>Team Leader, Retention and Collection</h3>
-                  <span class="date">Jun 2024 – Jul 2025 (1 Year 1 Month)</span>
                 </div>
                 <h4>EZECOM Co., LTD</h4>
+                <div class="date">Jun 2024 – Jul 2025 (1 Year 1 Month)</div>
                 <ul>
                   <li>Spearheaded the Collections and Retention Team, overseeing all operational activities and ensuring effective communication to meet ambitious business objectives.</li>
                   <li>Drove a High-Performance Culture by actively mentoring and coaching team specialists, resulting in high morale and continuous professional development.</li>
@@ -1984,9 +2203,9 @@
               <div class="timeline-content">
                 <div class="timeline-header">
                   <h3>Enterprise, Retention and Collection Officer</h3>
-                  <span class="date">Dec 2022 - Jun 2024 (1 Year 6 Months)</span>
                 </div>
                 <h4>EZECOM Co., LTD</h4>
+                <div class="date">Dec 2022 - Jun 2024 (1 Year 6 Months)</div>
                 <ul>
                   <li>Secured High-Value Enterprise Accounts by managing and enhancing strategic partnerships, directly protecting the company's largest revenue streams.</li>
                   <li>Successfully Transitioned and Integrated into the Collections Team while serving as the Enterprise Retention Officer, bridging both functions to strategically recover revenue.</li>
@@ -2004,9 +2223,9 @@
               <div class="timeline-content">
                 <div class="timeline-header">
                   <h3>ATM/CIM, Officer</h3>
-                  <span class="date">May 2022 - Nov 2022 (7 Months)</span>
                 </div>
                 <h4>ABA Bank at Independent Monument Branch</h4>
+                <div class="date">May 2022 - Nov 2022 (7 Months)</div>
                 <ul>
                   <li>Managed End-to-End Cash Flow Reconciliation for all ATM and CIM (Cash-In Machine) operations, ensuring the integrity and accuracy of daily transactions and customer deposits.</li>
                   <li>Ensured Operational Efficiency by overseeing the functionality of all self-service machines, immediately addressing technical issues to guarantee 24/7 service reliability.</li>
@@ -2173,7 +2392,7 @@
     <!-- footer section start -->
     <footer>
       <span
-        >Created By <a href="https://bitosing.github.io/LY-HENG/">LY HENG</a> |
+        >Created By <a href="#home">LY HENG</a> |
         <span class="far fa-copyright"></span> 2022 All rights reserved.</span
       >
     </footer>
@@ -2229,10 +2448,41 @@
         progressBars.forEach(bar => {
           // Set the width directly from the CSS variable
           const progress = getComputedStyle(bar).getPropertyValue('--progress');
+          const percentage = progress.replace('%', '');
+          
+          // Create percentage span if it doesn't exist
+          if (!bar.nextElementSibling || !bar.nextElementSibling.classList.contains('progress-percentage')) {
+            const percentageSpan = document.createElement('span');
+            percentageSpan.className = 'progress-percentage';
+            percentageSpan.textContent = '0%';
+            bar.parentNode.insertBefore(percentageSpan, bar.nextSibling);
+          }
+          
+          // Animate progress bar
           bar.style.width = '0';
           // Trigger reflow to restart animation
           void bar.offsetWidth;
           bar.style.width = progress;
+          
+          // Animate percentage counter
+          let start = 0;
+          const end = parseInt(percentage);
+          const duration = 1500; // Animation duration in ms
+          const stepTime = 20; // Update interval in ms
+          const steps = duration / stepTime;
+          const increment = end / steps;
+          
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+              start = end;
+              clearInterval(timer);
+            }
+            const percentageSpan = bar.nextElementSibling;
+            if (percentageSpan && percentageSpan.classList.contains('progress-percentage')) {
+              percentageSpan.textContent = Math.round(start) + '%';
+            }
+          }, stepTime);
         });
 
         // Initialize first image
